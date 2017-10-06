@@ -1,5 +1,7 @@
 package com.ims.serviceimpl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -34,6 +36,22 @@ public class UserServiceImpl implements UserService{
 	@Override
 	public Roles findByRole(String role) {
 		return roleRepository.findByRole(role);
+	}
+
+	@Override
+	public List<Users> findAll() {	
+		return (List<Users>) userRepository.findAll();
+	}
+
+	@Override
+	public void removeUser() {
+		
+		
+	}
+
+	@Override
+	public Users findById(String id) {
+		return userRepository.findById(id);
 	}
 
 }

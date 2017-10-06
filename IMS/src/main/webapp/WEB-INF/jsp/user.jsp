@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
 <meta charset="utf-8">
@@ -51,7 +53,7 @@
 							<div class="box-header with-border">
 								<h3 class="box-title">Create Contact</h3>
 							</div>
-							<form role="form" action="/savecontacts" modelAttribute="user">
+							<form role="form" action="/savecontacts" modelAttribute="user" method="post">
 								<div class="box-body">
 									<div class="row">
 										<div class="form-group col-md-2">
@@ -59,7 +61,7 @@
 											<!-- <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email"> -->
 										</div>
 										<div class="form-group col-md-3">
-											<input type="text" class="form-control" name="firstName" id="firstName"
+											<input type="text" class="form-control" name="firstName" id="firstName" value="${user.firstName}"
 												placeholder="Enter First Name">
 										</div>
 										<div class="form-group col-md-1"></div>
@@ -67,7 +69,7 @@
 											<label for="exampleInputEmail1">Last Name</label>
 										</div>
 										<div class="form-group col-md-3">
-											<input type="text" class="form-control" name="lastName" id="lastName"
+											<input type="text" class="form-control" name="lastName" id="lastName" value="${user.lastName}"
 												placeholder="Enter Last Name">
 										</div>
 									</div>
@@ -78,7 +80,7 @@
 											<!-- <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email"> -->
 										</div>
 										<div class="form-group col-md-3">
-											<input type="email" class="form-control" name="email" id="email"
+											<input type="email" class="form-control" name="email" id="email" value="${user.email}"
 												placeholder="Enter email">
 										</div>
 									</div>
@@ -88,7 +90,7 @@
 											<!-- <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email"> -->
 										</div>
 										<div class="form-group col-md-3">
-											<input type="text" class="form-control" name="mobile" id="mobile"
+											<input type="text" class="form-control" name="mobile" id="mobile" value="${user.mobile}"
 												placeholder="Enter Mobile Number">
 										</div>
 										<div class="form-group col-md-1"></div>
@@ -96,7 +98,7 @@
 											<label for="exampleInputEmail1">Phone</label>
 										</div>
 										<div class="form-group col-md-3">
-											<input type="text" class="form-control" name="phone" id="phone"
+											<input type="text" class="form-control" name="phone" id="phone" value="${user.phone}"
 												placeholder="Enter Phone Number">
 										</div>
 									</div>
@@ -175,7 +177,7 @@
 																<label for="exampleInputEmail1">Street</label>
 															</div>
 															<div class="form-group col-md-3">
-																<textarea class="form-control" rows="3"
+																<textarea class="form-control" rows="3" value="${user.address}"
 																	placeholder="Enter Street..." name="address" id="address"></textarea>
 																<!-- <input type="text" class="form-control" id="firstName"
 																	placeholder="Enter Mobile Number"> -->
@@ -186,7 +188,7 @@
 																<label for="exampleInputEmail1">City</label>
 															</div>
 															<div class="form-group col-md-3">
-																<input type="text" class="form-control" name="city" id="city"
+																<input type="text" class="form-control" name="city" id="city" value="${user.city}"
 																	placeholder="Enter Ciity">
 															</div>
 														</div>
@@ -195,7 +197,7 @@
 																<label for="exampleInputEmail1">State</label>
 															</div>
 															<div class="form-group col-md-3">
-																<input type="text" class="form-control" name="state" id="state"
+																<input type="text" class="form-control" name="state" id="state" value="${user.state}"
 																	placeholder="Enter State">
 															</div>
 														</div>
@@ -204,7 +206,7 @@
 																<label for="exampleInputEmail1">Zip Code</label>
 															</div>
 															<div class="form-group col-md-3">
-																<input type="text" class="form-control" name="postcode" id="postcode"
+																<input type="text" class="form-control" name="postcode" id="postcode" value="${user.postcode}"
 																	placeholder="Enter Zip Code">
 															</div>
 														</div>
@@ -213,7 +215,7 @@
 																<label for="exampleInputEmail1">Country</label>
 															</div>
 															<div class="form-group col-md-3">
-																<input type="text" class="form-control" name="country" id="country"
+																<input type="text" class="form-control" name="country" id="country" value="${user.country}"
 																	placeholder="Enter Country">
 															</div>
 														</div>
