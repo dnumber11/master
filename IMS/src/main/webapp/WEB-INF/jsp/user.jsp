@@ -53,7 +53,10 @@
 							<div class="box-header with-border">
 								<h3 class="box-title">Create Contact</h3>
 							</div>
-							<form role="form" action="/savecontacts" modelAttribute="user" method="post">
+							
+							<form role="form" action="/savecontacts" modelAttribute="user" method="post" enctype="multipart/form-data">
+							<input type="hidden" id="id" name ="id" value="${user.id}"/>
+							<input type="hidden" id="imagePath" name ="imagePath" value="${user.imagePath}"/>
 								<div class="box-body">
 									<div class="row">
 										<div class="form-group col-md-2">
@@ -117,7 +120,9 @@
 											<label for="exampleInputEmail1">Photo</label>
 										</div>
 										<div class="form-group col-md-3">
-											<input type="file" id="photo">
+											<input type="file" id="file" name="file" src="${user.imagePath}">
+											<img src="${user.imagePath}">
+											
 											<p class="help-block">Please upload your photo here.</p>
 											<!-- <div id="drop">
 												Drop Here <a>Browse</a> <input type="file" name="upl"
@@ -177,8 +182,8 @@
 																<label for="exampleInputEmail1">Street</label>
 															</div>
 															<div class="form-group col-md-3">
-																<textarea class="form-control" rows="3" value="${user.address}"
-																	placeholder="Enter Street..." name="address" id="address"></textarea>
+																<input type="text" class="form-control"  value="${user.address}"
+																	placeholder="Enter Street..." name="address" id="address">
 																<!-- <input type="text" class="form-control" id="firstName"
 																	placeholder="Enter Mobile Number"> -->
 															</div>
@@ -189,7 +194,7 @@
 															</div>
 															<div class="form-group col-md-3">
 																<input type="text" class="form-control" name="city" id="city" value="${user.city}"
-																	placeholder="Enter Ciity">
+																	placeholder="Enter City">
 															</div>
 														</div>
 														<div class="row">

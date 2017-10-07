@@ -46,6 +46,7 @@ public class Users implements Serializable{
 	private Integer createdBy;
 	private Date modifiedOn;
 	private Integer modifiedBy;
+	private String imagePath;
 //	@ManyToMany(cascade = CascadeType.ALL)
 //	@JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
 	private Roles roleId;
@@ -163,4 +164,11 @@ public class Users implements Serializable{
 	public void setActive(boolean active) {
 		this.active = active;
 	}
+	public String getImagePath() {
+		return imagePath;
+	}
+	public void setImagePath(String imagePath) {
+		this.imagePath = imagePath;
+	}
+	
 }

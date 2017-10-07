@@ -31,10 +31,14 @@ function createUser(){
 }
 
 function editUser(id){
-	alert(id);
 	window.location.href = '/editUser?id='+id;
 }
 
+function removeUser(id){
+	window.location.href = '/removeUser?id='+id;
+}
+
+removeUser
    
 </script>
 </head>
@@ -48,9 +52,10 @@ function editUser(id){
 				<div class="box-header">
 					<h3 class="box-title">User Details</h3>
 					<div class="row">
-					<div class="col-lg-10 col-lg-offset-8">
-					<button type="button" class="btn btn-primary" onclick="createUser()">Add New User</button>
-					</div>
+						<div class="col-lg-10 col-lg-offset-8">
+							<button type="button" class="btn btn-primary"
+								onclick="createUser()">Add New User</button>
+						</div>
 					</div>
 
 					<div class="box-tools">
@@ -82,41 +87,40 @@ function editUser(id){
 						<tr>
 							<c:forEach items="${userList}" var="list" varStatus="status">
 								<tr id="${list.id}">
+									
 									<td>${list.firstName}</td>
 									<td>${list.lastName}</td>
-									<td>${list.address}
-									,${list.city}
-									,${list.state}
-									,${list.postcode}
-									,${list.country}</td>
+									<td>${list.address},${list.city} ,${list.state}
+										,${list.postcode} ,${list.country}</td>
 									<td>${list.email}</td>
 									<td>${list.phone}</td>
 									<td>${list.mobile}</td>
 									<td><span class="label label-danger">${list.active}</span></td>
-									<td> 
-								<button type="button" class="btn btn-primary" onclick="editUser('${list.id}')">Edit</button>
+									<td>
+										<button type="button" class="btn btn-primary"
+											onclick="editUser('${list.id}')">Edit</button>
 									</td>
 									<td>
-									<button type="button" class="btn btn-primary">Delete</button>
+										<button type="button" class="btn btn-primary"
+											onclick="removeUser('${list.id}')">Delete</button>
 									</td>
-									</tr>
+								</tr>
 
-                </c:forEach>
-                  <!-- <td>175</td>
+							</c:forEach>
+							<!-- <td>175</td>
                   <td>Mike Doe</td>
                   <td>11-7-2014</td>
                   <td><span class="label label-danger">Denied</span></td>
                   <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
                 </tr> -->
-              
 					</table>
-            </div>
-            <!-- /.box-body -->
-          </div>
-          <!-- /.box -->
-        </div>
-      </div>
-    </section>
+				</div>
+				<!-- /.box-body -->
+			</div>
+			<!-- /.box -->
+		</div>
+	</div>
+	</section>
 
 </body>
 </html>

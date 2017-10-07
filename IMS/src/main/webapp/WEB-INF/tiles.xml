@@ -21,8 +21,8 @@
 	<definition name="app.products" extends="app.default">
 		<put-attribute name="content" value="/WEB-INF/jsp/products.jsp" />
 	</definition>
-	<definition name="app.listing" extends="app.default">
-		<put-attribute name="content" value="/WEB-INF/jsp/listing.jsp" />
+	<definition name="app.userlisting" extends="app.default">
+		<put-attribute name="content" value="/WEB-INF/jsp/userlisting.jsp" />
 	</definition>
  
 </tiles-definitions>

@@ -27,7 +27,9 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
-        <li class="active treeview">
+        
+        <!-- dinesh Starts -->
+        <!-- <li class="active treeview">
           <a href="#">
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
             <span class="pull-right-container">
@@ -38,7 +40,9 @@
             <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
             <li><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
           </ul>
-        </li>
+        </li> -->
+        <!-- dinesh ends -->
+        
         <!-- <li class="treeview">
           <a href="#">
             <i class="fa fa-files-o"></i>
@@ -119,15 +123,33 @@
             <li><a href="pages/tables/data.html"><i class="fa fa-circle-o"></i> Data tables</a></li>
           </ul>
         </li> -->
-        <li>
+        
+        
+         <li class="active treeview">
+          <a href="#">
+            <i class="fa fa-dashboard"></i> <span>Accounts</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li ><a href="/contacts"><i class="fa fa-circle-o"></i>User</a></li>
+            <li ><a href="/contacts"><i class="fa fa-circle-o"></i>Customer</a></li>
+            <li ><a href="/contacts"><i class="fa fa-circle-o"></i>Vendor</a></li>
+            
+          </ul>
+        </li> 
+        
+        
+        <!-- <li>
           <a href="/contacts">
-            <i class="fa fa-user-plus"></i> <span>Contacts</span>
-            <!-- <span class="pull-right-container">
+            <i class="fa fa-user-plus"></i> <span>Users</span>
+            <span class="pull-right-container">
               <small class="label pull-right bg-red">3</small>
               <small class="label pull-right bg-blue">17</small>
-            </span> -->
+            </span>
           </a>
-        </li>
+        </li> -->
         <li>
           <a href="/products">
             <i class="fa fa-user-secret"></i> <span>Products</span>
