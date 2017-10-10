@@ -31,12 +31,12 @@ function createUser(userType){
 	window.location.href = '/addNewUser?userType='+userType;
 }
 
-function editUser(id){
-	window.location.href = '/editUser?id='+id;
+function editUser(id,userType){
+	window.location.href = '/editUser?id='+id+'&userType='+userType;
 }
 
-function removeUser(id){
-	window.location.href = '/removeUser?id='+id;
+function removeUser(id,userType){
+	window.location.href = '/removeUser?id='+id+'&userType='+userType;
 }
 
    
@@ -110,11 +110,11 @@ function removeUser(id){
 									<td><span class="label label-danger">${list.active}</span></td>
 									<td>
 										<button type="button" class="btn btn-primary"
-											onclick="editUser('${list.id}')">Edit</button>
+											onclick="editUser('${list.id}','${account}')">Edit</button>
 									</td>
 									<td>
 										<button type="button" class="btn btn-primary"
-											onclick="removeUser('${list.id}')">Delete</button>
+											onclick="removeUser('${list.id}','${account}')">Delete</button>
 									</td>
 								</tr>
 

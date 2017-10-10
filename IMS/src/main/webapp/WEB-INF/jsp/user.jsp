@@ -28,15 +28,20 @@
 <link rel="stylesheet" href="../../dist/css/skins/_all-skins.min.css">
 
 </head>
+<script type="text/javascript">
+function goBack() {
+    window.history.back();
+}
+</script>
 <body class="hold-transition skin-blue sidebar-mini">
 	<div class="wrapper">
 		<div class="content-wrapper">
 			<section class="content-header">
-				<h1>Create New Contact</h1>
+				<h1> ${action} Account</h1>
 				<ol class="breadcrumb">
 					<li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
 					<li><a href="#">Forms</a></li>
-					<li class="active">Create Contact</li>
+					<li class="active"> ${action} ${account}</li>
 				</ol>
 			</section>
 			<section class="content">
@@ -44,8 +49,14 @@
 					<div class="col-md-12">
 						<div class="box box-primary">
 							<div class="box-header with-border">
-								<h3 class="box-title">Create Contact</h3>
+								<h3 class="box-title">${action} ${account}</h3>
 							</div>
+							<div class="row">
+						<div class="col-lg-10 col-lg-offset-8">
+							<button type="button" class="btn btn-primary"
+								onclick="goBack()">Back</button>
+						</div>
+					</div>
 							
 							<form role="form" action="/savecontacts" modelAttribute="user" method="post" enctype="multipart/form-data">
 							<input type="hidden" id="id" name ="id" value="${user.id}"/>

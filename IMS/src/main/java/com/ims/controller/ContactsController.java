@@ -2,14 +2,10 @@ package com.ims.controller;
 
 import java.io.BufferedOutputStream;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.IOException;
 import java.util.List;
 import java.util.Random;
 
-import javax.servlet.ServletContext;
-import javax.servlet.http.HttpSession;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -61,6 +57,7 @@ public class ContactsController {
 	@RequestMapping(value="/addNewUser",method = RequestMethod.GET)
 	public String addNewUser(ModelMap modelMap,@RequestParam("userType") String userType){
 		modelMap.addAttribute("account",userType );
+		modelMap.addAttribute("action","Create" );
 		return "app.users";
 	}
 	
@@ -80,7 +77,8 @@ public class ContactsController {
 					user.setImagePath(uploadImage(file));
 				}
 				userService.saveUser(user);
-			}			
+			}	
+			System.out.println(user.getUserType());
 			renderPageTo(user.getUserType(),modelMap);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -91,11 +89,11 @@ public class ContactsController {
 	
 	private String renderPageTo(String userType,ModelMap modelMap){
 		if(!StringUtils.isEmpty(userType)){
-			if(userType.trim().equals("U")){
+			if(userType.trim().equals("U") || userType.trim().equals("User")){
 				return user(modelMap);
-			}else if(userType.trim().equals("C")){
+			}else if(userType.trim().equals("C") || userType.trim().equals("Customer")){
 				return customer(modelMap);
-			}else if(userType.trim().equals("V")){
+			}else if(userType.trim().equals("V") || userType.trim().equals("Vendor")){
 				return vendor(modelMap);
 			}else{
 				//
@@ -133,16 +131,18 @@ public class ContactsController {
 	}
 	
 	@RequestMapping(value="/removeUser",method = RequestMethod.GET)
-	public String updateConttacts(@RequestParam("id") String id,ModelMap modelMap){
+	public String updateConttacts(@RequestParam("id") String id,@RequestParam("userType") String userType,ModelMap modelMap){
 		userService.removeUser(id);
-		user(modelMap);
+		renderPageTo(userType, modelMap);
 		return "app.userlisting";
 	}
 	
 	@RequestMapping(value="/editUser",method = RequestMethod.GET)
-	public String updateUser(@RequestParam("id") String id,ModelMap modelMap){
+	public String updateUser(@RequestParam("id") String id,@RequestParam("userType") String userType,ModelMap modelMap){
 		Users users=userService.findById(id);
 		modelMap.addAttribute("user",users );
+		modelMap.addAttribute("account",userType );
+		modelMap.addAttribute("action","Edit" );
 		return "app.users";
 	}
 }
