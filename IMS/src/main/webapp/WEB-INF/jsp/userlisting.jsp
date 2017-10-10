@@ -24,10 +24,11 @@
 <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
 <link rel="stylesheet" href="../../dist/css/skins/_all-skins.min.css">
-<script>
 
-function createUser(){
-	window.location.href = '/addNewUser';
+<script type="text/javascript">
+
+function createUser(userType){
+	window.location.href = '/addNewUser?userType='+userType;
 }
 
 function editUser(id){
@@ -38,7 +39,6 @@ function removeUser(id){
 	window.location.href = '/removeUser?id='+id;
 }
 
-removeUser
    
 </script>
 </head>
@@ -50,13 +50,7 @@ removeUser
 		<div class="col-lg-10 col-lg-offset-2">
 			<div class="box">
 				<div class="box-header">
-					<h3 class="box-title">User Details</h3>
-					<div class="row">
-						<div class="col-lg-10 col-lg-offset-8">
-							<button type="button" class="btn btn-primary"
-								onclick="createUser()">Add New User</button>
-						</div>
-					</div>
+					<h3 class="box-title">Account Details</h3>
 
 					<div class="box-tools">
 						<div class="input-group input-group-sm" style="width: 150px;">
@@ -71,6 +65,24 @@ removeUser
 						</div>
 					</div>
 				</div>
+				
+				<div class="row">
+				<div class="col-md-12">
+					<ul class="nav nav-tabs">
+						<li class="${account eq 'User' ? 'active' : ''}"><a href="/user" >User</a></li>
+						<li class="${account eq 'Customer' ? 'active' : ''}"><a href="/customer" >Customer</a></li>
+						<li class="${account eq 'Vendor' ? 'active' : ''}"><a href="/vendor">Vendor</a></li>
+					</ul>
+					</div>
+					</div>
+					
+					<div class="row">
+						<div class="col-lg-10 col-lg-offset-8">
+							<button type="button" class="btn btn-primary"
+								onclick="createUser('${account}')">Add New ${account}</button>
+						</div>
+					</div>
+				
 				<!-- /.box-header -->
 				<div class="box-body table-responsive no-padding">
 					<table class="table table-hover">

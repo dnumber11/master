@@ -27,13 +27,6 @@
        folder instead of downloading all of them to reduce the load. -->
 <link rel="stylesheet" href="../../dist/css/skins/_all-skins.min.css">
 
-<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
-
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 	<div class="wrapper">
@@ -136,6 +129,8 @@
 									</div>
 
 									<div class="row">
+									<c:choose>
+									<c:when test="${account == 'User'}">
 										<div class="form-group col-md-1">
 											<div class="radio">
 												<label> <input type="radio" name="userType"
@@ -143,21 +138,27 @@
 												</label>
 											</div>
 										</div>
+										</c:when>
+										<c:when test="${account == 'Customer'}">
 										<div class="form-group col-md-1">
 											<div class="radio">
 												<label> <input type="radio" name="userType"
-													id="userType" value="C"> Customer
+													id="userType" value="C" checked> Customer
 												</label>
 											</div>
 										</div>
+										</c:when>
+										<c:when test="${account == 'Vendor'}">
 										<div class="form-group col-md-1">
 											<div class="radio">
 												<label> <input type="radio" name="userType"
-													id="userType" value="V" disabled>
+													id="userType" value="V" checked>
 													Vendor
 												</label>
 											</div>
 										</div>
+										</c:when>
+										</c:choose>
 									</div>
 
 									<div class="row">
