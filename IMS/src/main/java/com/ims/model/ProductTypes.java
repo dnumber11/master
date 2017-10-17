@@ -2,6 +2,7 @@ package com.ims.model;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -21,13 +22,20 @@ public class ProductTypes implements Serializable{
 	private Date createdOn;
 	private Date modifiedOn;
 	private String modifiedBy;
-	private boolean isActive;
-	private boolean isTaxable;
+	private Integer isActive;
+	private Integer isTaxable;
+	private List<String> attribute;
 	public String getId() {
 		return id;
 	}
 	public void setId(String id) {
 		this.id = id;
+	}
+	public String getProductType() {
+		return productType;
+	}
+	public void setProductType(String productType) {
+		this.productType = productType;
 	}
 	public String getDescription() {
 		return description;
@@ -53,22 +61,22 @@ public class ProductTypes implements Serializable{
 	public void setModifiedBy(String modifiedBy) {
 		this.modifiedBy = modifiedBy;
 	}
-	public boolean isActive() {
+	public Integer getIsActive() {
 		return isActive;
 	}
-	public void setActive(boolean isActive) {
+	public void setIsActive(Integer isActive) {
 		this.isActive = isActive;
 	}
-	public boolean isTaxable() {
+	public Integer getIsTaxable() {
 		return isTaxable;
 	}
-	public void setTaxable(boolean isTaxable) {
+	public void setIsTaxable(Integer isTaxable) {
 		this.isTaxable = isTaxable;
 	}
-	public String getProductType() {
-		return productType;
+	public List<String> getAttribute() {
+		return attribute;
 	}
-	public void setProductType(String productType) {
-		this.productType = productType;
+	public void setAttribute(List<String> attribute) {
+		this.attribute = attribute;
 	}
 }

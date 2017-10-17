@@ -1,5 +1,7 @@
 package com.ims.repository;
 
+import java.util.List;
+
 import org.springframework.data.repository.CrudRepository;
 
 import com.ims.model.ProductTypes;

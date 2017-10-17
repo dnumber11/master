@@ -125,19 +125,19 @@
         </li> -->
         
         
-         <li class="active treeview">
-          <a href="#">
+         <li >
+          <a href="/user">
             <i class="fa fa-dashboard"></i> <span>Accounts</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
-          <ul class="treeview-menu">
+          <!-- <ul class="treeview-menu">
             <li ><a href="/contacts"><i class="fa fa-circle-o"></i>User</a></li>
             <li ><a href="/contacts"><i class="fa fa-circle-o"></i>Customer</a></li>
             <li ><a href="/contacts"><i class="fa fa-circle-o"></i>Vendor</a></li>
             
-          </ul>
+          </ul> -->
         </li> 
         
         

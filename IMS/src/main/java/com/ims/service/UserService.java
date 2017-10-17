@@ -18,4 +18,6 @@ public interface UserService {
 	public void removeUser(String id);
 	
 	public Users findById(String id);
+	
+	public List<Users> findByUserType(String userType);
 }
