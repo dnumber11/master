@@ -38,38 +38,31 @@
 		})
 	})
 
+	function createUser(userType) {
+		window.location.href = '/addNewUser?userType=' + userType;
+	}
 
+	<script type="text/javascript">
 
 	function createUser(userType) {
 		window.location.href = '/addNewUser?userType=' + userType;
 	}
 
-<script type="text/javascript">
-
-function createUser(userType){
-	window.location.href = '/addNewUser?userType='+userType;
-}
+	function editUser(id, userType) {
+		window.location.href = '/editUser?id=' + id + '&userType=' + userType;
+	}
 
 	function editUser(id, userType) {
 		window.location.href = '/editUser?id=' + id + '&userType=' + userType;
 	}
 
-function editUser(id,userType){
-	window.location.href = '/editUser?id='+id+'&userType='+userType;
-}
-
-
-
 	function removeUser(id, userType) {
 		window.location.href = '/removeUser?id=' + id + '&userType=' + userType;
 	}
 
-function removeUser(id,userType){
-	window.location.href = '/removeUser?id='+id+'&userType='+userType;
-}
-
-   
-
+	function removeUser(id, userType) {
+		window.location.href = '/removeUser?id=' + id + '&userType=' + userType;
+	}
 </script>
 
 <div class="content-wrapper">
@@ -115,19 +108,25 @@ function removeUser(id,userType){
 				</div>
 
 				<!-- /.box-header -->
-				<div class="box-body table-responsive no-padding">
-					<table class="table table-hover" id="contactList">
-						<tr>
-							<th>First Name</th>
-							<th>Last Name</th>
-							<th>Address</th>
-							<th>Email</th>
-							<th>Phone</th>
-							<th>Mobile</th>
-							<th>Status</th>
+				<!-- <div class="box-body table-responsive no-padding">
+					<table class="table table-hover" id="contactList"> -->
+					<div class="box-body">
+						<table id="contactList" class="table table-bordered table-striped">
+						<thead>
+							<tr>
+								<th>First Name</th>
+								<th>Last Name</th>
+								<th>Address</th>
+								<th>Email</th>
+								<th>Phone</th>
+								<th>Mobile</th>
+								<th>Status</th>
+								<th></th>
+								<th></th>
 
-						</tr>
-						<tr>
+							</tr>
+						</thead>
+						<tbody>
 							<c:forEach items="${userList}" var="list" varStatus="status">
 								<tr id="${list.id}">
 
@@ -150,12 +149,7 @@ function removeUser(id,userType){
 								</tr>
 
 							</c:forEach>
-							<!-- <td>175</td>
-                  <td>Mike Doe</td>
-                  <td>11-7-2014</td>
-                  <td><span class="label label-danger">Denied</span></td>
-                  <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                </tr> -->
+						</tbody>
 					</table>
 
 				</div>
