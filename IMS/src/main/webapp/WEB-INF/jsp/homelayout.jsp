@@ -20,6 +20,8 @@
 <!-- Dynamic HTML -->
 <script src="dynamic/js/jquery.czMore-latest.js"></script>
 <script src="dynamic/js/jquery.czMore-1.5.3.2.js"></script>
+<!-- Tag Input -->
+<script src="taginput/bootstrap-tagsinput.js"></script>
 <!-- Sparkline -->
 <script src="bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
 <!-- jvectormap -->
@@ -69,6 +71,8 @@
   <link rel="stylesheet" href="bower_components/morris.js/morris.css">
   <!-- jvectormap -->
   <link rel="stylesheet" href="bower_components/jvectormap/jquery-jvectormap.css">
+  <!-- Tag Input -->
+  <link rel="stylesheet" href="taginput/bootstrap-tagsinput.css">
   <!-- Date Picker -->
   <link rel="stylesheet" href="bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
   <!-- Daterange picker -->

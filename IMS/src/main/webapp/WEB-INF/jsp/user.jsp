@@ -12,12 +12,35 @@
 <meta
 	content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
 	name="viewport">
+
 <script type="text/javascript">
 function goBack() {
     window.history.back();
 }
 </script>
+
+<!-- Bootstrap 3.3.7 -->
+<link rel="stylesheet"
+	href="../../bower_components/bootstrap/dist/css/bootstrap.min.css">
+<!-- Font Awesome -->
+<link rel="stylesheet"
+	href="../../bower_components/font-awesome/css/font-awesome.min.css">
+<!-- Ionicons -->
+<link rel="stylesheet"
+	href="../../bower_components/Ionicons/css/ionicons.min.css">
+<!-- Theme style -->
+<link rel="stylesheet" href="../../dist/css/AdminLTE.min.css">
+<!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+<link rel="stylesheet" href="../../dist/css/skins/_all-skins.min.css">
+
+
 </head>
+<script type="text/javascript">
+function goBack() {
+    window.history.back();
+}
+</script>
 <body class="hold-transition skin-blue sidebar-mini">
 	<div class="wrapper">
 		<div class="content-wrapper">
@@ -34,9 +57,14 @@ function goBack() {
 					<div class="col-md-12">
 						<div class="box box-primary">
 							<div class="box-header with-border">
+<<<<<<< HEAD
 								<h3 class="box-title">${action}${account}</h3>
+=======
+								<h3 class="box-title">${action} ${account}</h3>
+>>>>>>> branch 'master' of https://github.com/dnumber11/master.git
 							</div>
 							<div class="row">
+<<<<<<< HEAD
 								<div class="col-lg-10 col-lg-offset-8">
 									<button type="button" class="btn btn-primary"
 										onclick="goBack()">Back</button>
@@ -48,6 +76,17 @@ function goBack() {
 								<input type="hidden" id="id" name="id" value="${user.id}" /> <input
 									type="hidden" id="imagePath" name="imagePath"
 									value="${user.imagePath}" />
+=======
+						<div class="col-lg-10 col-lg-offset-8">
+							<button type="button" class="btn btn-primary"
+								onclick="goBack()">Back</button>
+						</div>
+					</div>
+							
+							<form role="form" action="/savecontacts" modelAttribute="user" method="post" enctype="multipart/form-data">
+							<input type="hidden" id="id" name ="id" value="${user.id}"/>
+							<input type="hidden" id="imagePath" name ="imagePath" value="${user.imagePath}"/>
+>>>>>>> branch 'master' of https://github.com/dnumber11/master.git
 								<div class="box-body">
 									<div class="row">
 										<div class="form-group col-md-2">
@@ -132,34 +171,38 @@ function goBack() {
 									</div>
 
 									<div class="row">
+
 										<c:choose>
-											<c:when test="${account == 'User'}">
-												<div class="form-group col-md-1">
-													<div class="radio">
-														<label> <input type="radio" name="userType"
-															id="userType" value="U" checked> User
-														</label>
-													</div>
-												</div>
-											</c:when>
-											<c:when test="${account == 'Customer'}">
-												<div class="form-group col-md-1">
-													<div class="radio">
-														<label> <input type="radio" name="userType"
-															id="userType" value="C" checked> Customer
-														</label>
-													</div>
-												</div>
-											</c:when>
-											<c:when test="${account == 'Vendor'}">
-												<div class="form-group col-md-1">
-													<div class="radio">
-														<label> <input type="radio" name="userType"
-															id="userType" value="V" checked> Vendor
-														</label>
-													</div>
-												</div>
-											</c:when>
+											
+									<c:when test="${account == 'User'}">
+										<div class="form-group col-md-1">
+											<div class="radio">
+												<label> <input type="radio" name="userType"
+													id="userType" value="U" checked> User
+												</label>
+											</div>
+										</div>
+										</c:when>
+										<c:when test="${account == 'Customer'}">
+										<div class="form-group col-md-1">
+											<div class="radio">
+												<label> <input type="radio" name="userType"
+													id="userType" value="C" checked> Customer
+												</label>
+											</div>
+										</div>
+										</c:when>
+										<c:when test="${account == 'Vendor'}">
+										<div class="form-group col-md-1">
+											<div class="radio">
+												<label> <input type="radio" name="userType"
+													id="userType" value="V" checked>
+													Vendor
+												</label>
+											</div>
+										</div>
+										</c:when>
+
 										</c:choose>
 									</div>
 

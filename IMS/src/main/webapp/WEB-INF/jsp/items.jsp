@@ -54,11 +54,34 @@ function goBack() {
 										</div>
 										<div class="form-group col-md-3">
 											<select class="form-control" name="">
-												<option value="">-----Select-----</option>
+												<option value="">Select Product Type</option>
 												<c:forEach items="${productTypList}" var="productTypes">
 													<option value="${productTypes.productType}">${productTypes.productType}</option>
 												</c:forEach>
 											</select>
+										</div>
+									</div>
+									<div class="row">
+										<div class="form-group col-md-2">
+											<label for="exampleInputEmail1">Attribute</label>
+											<!-- <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email"> -->
+										</div>
+										<div class="form-group col-md-3">
+											<label for="exampleInputEmail1">Attribute Values</label>
+											<!-- <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email"> -->
+										</div>
+									</div>
+									<div class="row">
+										<div class="form-group col-md-2">
+											<select class="form-control" name="">
+												<option value="">Select Attribute</option>
+												<c:forEach items="${productTypList}" var="productTypes">
+													<option value="${productTypes.attribute}">${productTypes.attribute}</option>
+												</c:forEach>
+											</select>
+										</div>
+										<div class="form-group col-md-6">
+											<input type="text" class="form-control" data-role="tagsinput" />
 										</div>
 									</div>
 									<div class="box-footer">
@@ -73,5 +96,13 @@ function goBack() {
 		</div>
 		<div class="control-sidebar-bg"></div>
 	</div>
+	$('#tags-input').tagsinput({
+	  typeaheadjs: {
+		name: 'countries',
+		displayKey: 'name',
+		valueKey: 'name',
+		source: countries.ttAdapter()
+	  }
+	});
 </body>
 </html>
