@@ -33,14 +33,7 @@ function goBack() {
 <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
 <link rel="stylesheet" href="../../dist/css/skins/_all-skins.min.css">
-
-
 </head>
-<script type="text/javascript">
-function goBack() {
-    window.history.back();
-}
-</script>
 <body class="hold-transition skin-blue sidebar-mini">
 	<div class="wrapper">
 		<div class="content-wrapper">
@@ -57,14 +50,10 @@ function goBack() {
 					<div class="col-md-12">
 						<div class="box box-primary">
 							<div class="box-header with-border">
-<<<<<<< HEAD
-								<h3 class="box-title">${action}${account}</h3>
-=======
+
 								<h3 class="box-title">${action} ${account}</h3>
->>>>>>> branch 'master' of https://github.com/dnumber11/master.git
 							</div>
 							<div class="row">
-<<<<<<< HEAD
 								<div class="col-lg-10 col-lg-offset-8">
 									<button type="button" class="btn btn-primary"
 										onclick="goBack()">Back</button>
@@ -76,17 +65,6 @@ function goBack() {
 								<input type="hidden" id="id" name="id" value="${user.id}" /> <input
 									type="hidden" id="imagePath" name="imagePath"
 									value="${user.imagePath}" />
-=======
-						<div class="col-lg-10 col-lg-offset-8">
-							<button type="button" class="btn btn-primary"
-								onclick="goBack()">Back</button>
-						</div>
-					</div>
-							
-							<form role="form" action="/savecontacts" modelAttribute="user" method="post" enctype="multipart/form-data">
-							<input type="hidden" id="id" name ="id" value="${user.id}"/>
-							<input type="hidden" id="imagePath" name ="imagePath" value="${user.imagePath}"/>
->>>>>>> branch 'master' of https://github.com/dnumber11/master.git
 								<div class="box-body">
 									<div class="row">
 										<div class="form-group col-md-2">
