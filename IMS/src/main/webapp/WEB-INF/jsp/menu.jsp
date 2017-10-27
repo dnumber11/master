@@ -128,9 +128,6 @@
          <li >
           <a href="/user">
             <i class="fa fa-dashboard"></i> <span>Accounts</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
           </a>
           <!-- <ul class="treeview-menu">
             <li ><a href="/contacts"><i class="fa fa-circle-o"></i>User</a></li>
@@ -140,23 +137,14 @@
           </ul> -->
         </li> 
         
-        
-        <!-- <li>
-          <a href="/contacts">
-            <i class="fa fa-user-plus"></i> <span>Users</span>
-            <span class="pull-right-container">
-              <small class="label pull-right bg-red">3</small>
-              <small class="label pull-right bg-blue">17</small>
-            </span>
-          </a>
-        </li> -->
         <li>
           <a href="/products">
             <i class="fa fa-user-secret"></i> <span>Products</span>
-            <!-- <span class="pull-right-container">
-              <small class="label pull-right bg-red">3</small>
-              <small class="label pull-right bg-blue">17</small>
-            </span> -->
+          </a>
+        </li>
+        <li>
+          <a href="/billing">
+            <i class="fa fa-user-secret"></i> <span>Billing</span>
           </a>
         </li>
         <!-- <li>

@@ -22,6 +22,8 @@
 <script src="dynamic/js/jquery.czMore-1.5.3.2.js"></script>
 <!-- Tag Input -->
 <script src="taginput/bootstrap-tagsinput.js"></script>
+<!-- select2 -->
+<script src="bower_components/select2/dist/js/select2.full.min.js"></script>
 <!-- Sparkline -->
 <script src="bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
 <!-- jvectormap -->
@@ -50,8 +52,11 @@
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+
 <script>
   $.widget.bridge('uibutton', $.ui.button);
+  
+  
 </script>
   
   <!-- Tell the browser to be responsive to screen width -->
@@ -73,6 +78,8 @@
   <link rel="stylesheet" href="bower_components/jvectormap/jquery-jvectormap.css">
   <!-- Tag Input -->
   <link rel="stylesheet" href="taginput/bootstrap-tagsinput.css">
+      <!-- Select2 -->
+  <link rel="stylesheet" href="bower_components/select2/dist/css/select2.min.css">
   <!-- Date Picker -->
   <link rel="stylesheet" href="bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
   <!-- Daterange picker -->
