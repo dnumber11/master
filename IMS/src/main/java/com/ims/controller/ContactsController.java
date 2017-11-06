@@ -144,4 +144,14 @@ public class ContactsController {
 		modelMap.addAttribute("action","Edit" );
 		return "app.users";
 	}
+	
+	//View User Profile
+	@RequestMapping(value="/viewProfile",method = RequestMethod.GET)
+	public String getProfile(@RequestParam("id") String id,@RequestParam("userType") String userType,ModelMap modelMap){
+		Users users=userService.findById(id);
+		modelMap.addAttribute("user",users );
+		modelMap.addAttribute("account",userType );
+		modelMap.addAttribute("action","Profile");
+		return "app.viewprofile";
+	}
 }
