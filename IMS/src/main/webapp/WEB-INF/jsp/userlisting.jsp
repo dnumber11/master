@@ -24,7 +24,9 @@ function createUser(userType){
 function editUser(id,userType){
 	window.location.href = '/editUser?id='+id+'&userType='+userType;
 }
-
+function viewProfile(id,userType){
+	window.location.href = '/viewProfile?id='+id+'&userType='+userType;
+}
 function removeUser(id,userType){
 	window.location.href = '/removeUser?id='+id+'&userType='+userType;
 }
@@ -77,8 +79,8 @@ function removeUser(id,userType){
 							<tbody>
 								<c:forEach items="${userList}" var="list" varStatus="status">
 									<tr id="${list.id}">
-
-										<td>${list.firstName}</td>
+										
+										<td><a href="#"	onclick="viewProfile('${list.id}','${account}')">${list.firstName}</a></td>
 										<td>${list.lastName}</td>
 										<td>${list.address},${list.city},${list.state}
 											,${list.postcode} ,${list.country}</td>

@@ -262,8 +262,9 @@ function goBack() {
 																	any)</label>
 															</div>
 															<div class="form-group col-md-4">
-																<textarea class="form-control" rows="3"
-																	placeholder="Enter Note..."></textarea>
+																<textarea class="form-control" rows="3" 
+																name="notes" id="notes" 
+																	placeholder="Enter Note...">${user.notes}</textarea>
 																<!-- <input type="text" class="form-control" id="firstName"
 																	placeholder="Enter Mobile Number"> -->
 															</div>
