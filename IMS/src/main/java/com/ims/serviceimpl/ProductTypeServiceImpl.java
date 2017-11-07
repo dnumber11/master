@@ -27,6 +27,19 @@ public class ProductTypeServiceImpl implements ProductTypeService{
 		return (List<ProductTypes>) productTypeRepository.findAll();
 	}
 	
+
+	@Override
+	public void removeProductType(String id) {
+		ProductTypes productTypes=productTypeRepository.findById(id);
+		productTypeRepository.delete(productTypes);
+		
+	}
+
+	@Override
+	public ProductTypes findById(String id) {
+		return productTypeRepository.findById(id);
+	}
+	
 	
 
 }
