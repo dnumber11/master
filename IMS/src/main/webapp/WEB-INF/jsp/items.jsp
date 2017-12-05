@@ -13,9 +13,31 @@
 	content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
 	name="viewport">
 <script>
-function goBack() {
-    window.history.back();
-}
+	function goBack() {
+		window.history.back();
+	}
+
+	window.onload = function() {
+		document.getElementById("itemsForm").onkeypress = function(e) {
+			var key = e.charCode || e.keyCode || 0;
+			if (key == 13) {
+				e.preventDefault();
+			}
+		}
+	}
+
+	$(document).ready(function() {
+
+		$(".add-more").click(function() {
+			var html = $(".copy").html();
+			$(".after-add-more").after(html);
+		});
+
+		$("body").on("click", ".remove", function() {
+			$(this).parents(".control-group").remove();
+		});
+
+	});
 </script>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
@@ -42,8 +64,8 @@ function goBack() {
 										onclick="goBack()">Back</button>
 								</div>
 							</div>
-							<form role="form" action="/savecontacts" method="post"
-								enctype="multipart/form-data">
+							<form role="form" method="post" action="/savecontacts"
+								enctype="multipart/form-data" id="itemsForm">
 								<%-- <input type="hidden" id="id" name ="id" value="${user.id}"/>
 							<input type="hidden" id="imagePath" name ="imagePath" value="${user.imagePath}"/> --%>
 								<div class="box-body">
@@ -61,7 +83,7 @@ function goBack() {
 											</select>
 										</div>
 									</div>
-									<div class="row">
+									<div class="row   after-add-more control-group">
 										<div class="form-group col-md-2">
 											<label for="exampleInputEmail1">Attribute</label>
 											<!-- <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email"> -->
@@ -71,7 +93,7 @@ function goBack() {
 											<!-- <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email"> -->
 										</div>
 									</div>
-									<div class="row">
+									<div class="row copy">
 										<div class="form-group col-md-2">
 											<select class="form-control" name="">
 												<option value="">Select Attribute</option>
@@ -83,12 +105,73 @@ function goBack() {
 										<div class="form-group col-md-6">
 											<input type="text" class="form-control" data-role="tagsinput" />
 										</div>
+										<div class="form-group col-md-1">
+											<button type="button" id="btnAdd"
+												class="btn btn-default remove">
+												<i class="fa fa-minus"></i>
+											</button>
+										</div>
+									</div>
+
+									<div class="box-body">
+										<div class="row">
+											<div class="form-group col-md-3">
+												<button type="button" id="btnAdd"
+													class="btn btn-default add-more">
+													<i class="fa fa-plus"></i> Add one more products
+												</button>
+											</div>
+										</div>
 									</div>
 									<div class="box-footer">
-										<button type="submit" class="btn btn-primary">Submit</button>
+										<button type="submit" class="btn btn-primary"
+											onclick="doPreview();">Submit</button>
 									</div>
 								</div>
 							</form>
+
+							<%-- <div class="hide copy">
+								<div class="row control-group">
+									<div class="form-group col-md-2">
+										<select class="form-control" name="">
+											<option value="">Select Attribute</option>
+											<c:forEach items="${productTypList}" var="productTypes">
+												<option value="${productTypes.attribute}">${productTypes.attribute}</option>
+											</c:forEach>
+										</select>
+									</div>
+									<div class="form-group col-md-6">
+										<input type="text" class="form-control" id="taginput"
+											data-role="tagsinput" />
+									</div>
+									<div class="form-group col-md-1">
+										<button type="button" id="btnAdd"
+											class="btn btn-default remove">
+											<i class="fa fa-minus"></i>
+										</button>
+									</div>
+								</div>
+							</div> --%>
+							<%-- <div class="row hide copy">
+								<div class="form-group col-md-2">
+									<select class="form-control" name="">
+										<option value="">Select Attribute</option>
+										<c:forEach items="${productTypList}" var="productTypes">
+											<option value="${productTypes.attribute}">${productTypes.attribute}</option>
+										</c:forEach>
+									</select>
+								</div>
+								<div class="form-group col-md-6">
+									<input type="text" class="form-control" data-role="tagsinput" />
+								</div>
+								<div class="form-group col-md-1">
+									<button type="button" id="btnAdd"
+										class="btn btn-default remove">
+										<i class="fa fa-minus"></i>
+									</button>
+								</div>
+							</div>
+ --%>
 						</div>
 					</div>
 				</div>
@@ -96,13 +179,9 @@ function goBack() {
 		</div>
 		<div class="control-sidebar-bg"></div>
 	</div>
-	$('#tags-input').tagsinput({
-	  typeaheadjs: {
-		name: 'countries',
-		displayKey: 'name',
-		valueKey: 'name',
-		source: countries.ttAdapter()
-	  }
-	});
+
+	<!-- <script type="text/javascript">
+		
+	</script> -->
 </body>
 </html>

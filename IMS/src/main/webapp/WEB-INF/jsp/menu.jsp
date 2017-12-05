@@ -147,6 +147,16 @@
             <i class="fa fa-user-secret"></i> <span>Billing</span>
           </a>
         </li>
+        <li>
+          <a href="/sales">
+            <i class="fa fa-user-secret"></i> <span>Sales</span>
+          </a>
+        </li>
+        <li>
+          <a href="/purchase">
+            <i class="fa fa-user-secret"></i> <span>Purchase</span>
+          </a>
+        </li>
         <!-- <li>
           <a href="pages/mailbox/mailbox.html">
             <i class="fa fa-envelope"></i> <span>Mailbox</span>

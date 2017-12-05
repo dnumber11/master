@@ -27,6 +27,9 @@ public class ProductTypeServiceImpl implements ProductTypeService{
 		return (List<ProductTypes>) productTypeRepository.findAll();
 	}
 	
-	
+	@Override
+	public ProductTypes retriveProductType(Long productTypeId) {
+		return productTypeRepository.findOne(productTypeId);
+	}
 
 }

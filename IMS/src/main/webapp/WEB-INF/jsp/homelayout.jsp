@@ -17,9 +17,13 @@
 <!-- Morris.js charts -->
 <script src="bower_components/raphael/raphael.min.js"></script>
 <script src="bower_components/morris.js/morris.min.js"></script>
+
+<script src="bootstrapeditable/js/bootstrap-editable.min.js"></script>
+<script src="bootstrapeditable/js/address.js"></script>
+
 <!-- Dynamic HTML -->
-<script src="dynamic/js/jquery.czMore-latest.js"></script>
-<script src="dynamic/js/jquery.czMore-1.5.3.2.js"></script>
+<!-- <script src="dynamic/js/jquery.czMore-latest.js"></script>
+<script src="dynamic/js/jquery.czMore-1.5.3.2.js"></script> -->
 <!-- Tag Input -->
 <script src="taginput/bootstrap-tagsinput.js"></script>
 <!-- select2 -->
@@ -36,6 +40,12 @@
 <script src="bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
 <!-- datepicker -->
 <script src="bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+<!-- Select2 -->
+<script src="bower_components/select2/dist/js/select2.full.min.js"></script>
+<!-- InputMask -->
+<script src="plugins/input-mask/jquery.inputmask.js"></script>
+<script src="plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
+<script src="plugins/input-mask/jquery.inputmask.extensions.js"></script>
 <!-- Bootstrap WYSIHTML5 -->
 <script src="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
 <!-- DataTables -->
@@ -53,8 +63,9 @@
 <script src="dist/js/demo.js"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 
+
 <script>
-  $.widget.bridge('uibutton', $.ui.button);
+  /* $.widget.bridge('uibutton', $.ui.button); */
   
   
 </script>
@@ -89,6 +100,9 @@
 	href="bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
   <!-- bootstrap wysihtml5 - text editor -->
   <link rel="stylesheet" href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+  
+  <link href="bootstrapeditable/css/bootstrap-editable.css" rel="stylesheet">
+  <link href="bootstrapeditable/css/address.css" rel="stylesheet">
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

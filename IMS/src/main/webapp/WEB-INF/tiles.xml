@@ -33,4 +33,10 @@
 	<definition name="app.billing" extends="app.default">
 		<put-attribute name="content" value="/WEB-INF/jsp/billing.jsp" />
 	</definition>
+	<definition name="app.sales" extends="app.default">
+		<put-attribute name="content" value="/WEB-INF/jsp/sales.jsp" />
+	</definition>
+	<definition name="app.purchase" extends="app.default">
+		<put-attribute name="content" value="/WEB-INF/jsp/purchase.jsp" />
+	</definition>
 </tiles-definitions>

@@ -11,4 +11,6 @@ public interface ProductTypeService {
 	
 	public List<ProductTypes> findAll();
 	
+	public ProductTypes retriveProductType(Long productTypes);
+	
 }
