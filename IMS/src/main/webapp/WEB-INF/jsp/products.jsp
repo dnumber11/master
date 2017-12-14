@@ -44,6 +44,7 @@ function goBack() {
 							</div>
 							<form role="form" action="/createProductType" method="post"
 								enctype="multipart/form-data">
+								<input type="hidden" id="id" name="id" value="${productType.id}" />
 								<div class="box-body">
 									<div class="row">
 										<div class="form-group col-md-2">
@@ -52,7 +53,7 @@ function goBack() {
 										</div>
 										<div class="form-group col-md-3">
 											<input type="text" class="form-control" name="productType"
-												id="productType" placeholder="Enter Product Type">
+												id="productType" placeholder="Enter Product Type" value="${productType.productType}">
 										</div>
 									</div>
 									<div class="row">
@@ -63,7 +64,7 @@ function goBack() {
 										<div class="form-group col-md-3">
 											<textarea class="form-control" rows="3"
 												placeholder="Enter Product Type Description..."
-												name="description" id="description"></textarea>
+												name="description" id="description" >${productType.description}</textarea>
 											<!-- <input type="text" class="form-control" id="firstName"
 												placeholder="Enter First Name"> -->
 										</div>
@@ -101,12 +102,15 @@ function goBack() {
 									</div>
 								</div>
 							</form>
+							
+							<c:forEach items="${productType.attribute}" var="list" varStatus="status">
+							
 							<div class="hide copy">
 								<div class="row control-group">
 									<div class="form-group col-md-2"></div>
 									<div class="form-group col-md-3">
 										<input type="text" class="form-control" name="attribute"
-											id="attribute" placeholder="Enter Product Type">
+											id="attribute" placeholder="Enter Product Type" value="${list}">
 									</div>
 									<div class="form-group col-md-1">
 										<button type="button" id="btnAdd"
@@ -116,6 +120,8 @@ function goBack() {
 									</div>
 								</div>
 							</div>
+							</c:forEach>
+							
 						</div>
 					</div>
 				</div>

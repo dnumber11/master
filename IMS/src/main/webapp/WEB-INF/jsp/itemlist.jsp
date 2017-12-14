@@ -27,6 +27,14 @@
 	function removeUser(id, userType) {
 		window.location.href = '/removeUser?id=' + id + '&userType=' + userType;
 	}
+	
+	function editProductType(id) {
+		window.location.href = '/editProductType?id=' + id;
+	}
+
+	function removeProductType(id) {
+		window.location.href = '/removeProductType?id=' + id;
+	}
 </script>
 
 <div class="content-wrapper">
@@ -119,13 +127,10 @@
 										<td>${list.description}</td>
 										<td>${list.createdOn}</td>
 										<td>${list.modifiedOn}</td>
-										<%-- <td>${list.phone}</td>
-										<td>${list.mobile}</td>
-										<td><span class="label label-danger">${list.active}</span></td>
 										<td>
-											<a href="#"	onclick="editUser('${list.id}','${account}')">Edit</a>/
-											<a href="#"	onclick="removeUser('${list.id}','${account}')">Delete</a>
-										</td> --%>
+											<a href="#"	onclick="editProductType('${list.id}')">Edit</a>/
+											<a href="#"	onclick="removeProductType('${list.id}')">Delete</a>
+										</td>
 									</tr>
 								</c:forEach>
 							</tbody>
